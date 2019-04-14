@@ -1,4 +1,4 @@
 from django import forms
 
-class shorten_urls(forms.Form):
-    original_link = forms.TextInput()
+class ShortenForm(forms.Form):
+    original_link = forms.CharField(label="Your URL ")

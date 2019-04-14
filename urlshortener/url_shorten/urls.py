@@ -16,7 +16,8 @@ Including another URLconf
 from django.urls import path
 from . import views
 
-app_name = "url_shorten"
+app_name = 'url_shorten'
 urlpatterns = [
-    path('', views.MainIndex.as_view()),
+    path('', views.main_index, name='mainindex'),
+    path('<gen_link>', views.redirect_view, name="redirect")
 ]

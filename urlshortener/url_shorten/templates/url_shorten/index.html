@@ -5,6 +5,16 @@
     <title>URLShorten</title>
 </head>
 <body>
-    <h1>This is the beginning page!</h1>
+    <h1>This is a URL Shortener.</h1>
+    <form action="/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+    {% if messages %}
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
 </body>
 </html>
