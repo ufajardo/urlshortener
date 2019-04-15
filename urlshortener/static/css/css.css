@@ -1,0 +1,65 @@
+
+#main-content {
+	padding: 10px 40px;
+}
+
+.url_shortener {
+	margin: 5px 10%;
+	align-items: center;
+	background-color: #e5e7e9;
+	border: 2px solid #d7dbdd;
+	border-radius: 5px;
+	padding: 2% 10% 5% 10%;
+	font-family: 'Merriweather', serif;
+}
+
+.url_shortener label {
+	background-color: #4CAF50;
+	padding: 12px 8px;
+	color: white;
+	margin-bottom: 10px;
+	display: flex;
+	flex-flow: column-reverse wrap;
+}
+
+.url_shortener input{
+	padding: 10px 8px;
+	border: none;
+	border-bottom: 2px solid #4CAF50;
+	width: 100%;
+}
+
+button{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.message {
+	margin-top: 20px;
+	background-color: white;
+
+}
+
+.message-title {
+	border: 2px solid #4CAF50;
+	border-radius: 5px 5px 0px 0px;
+	border-bottom: none;
+	padding-bottom: 5px;
+	background-color: #4CAF50;
+	text-align: center;
+	color: white;
+}
+
+.message-body {
+	border: 2px solid #4CAF50;
+	border-top: none;
+	border-radius: 0px 0px 5px 5px;
+	text-align: center;
+	padding: 20px 0px;
+}

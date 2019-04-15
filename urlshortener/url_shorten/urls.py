@@ -19,5 +19,5 @@ from . import views
 app_name = 'url_shorten'
 urlpatterns = [
     path('', views.main_index, name='mainindex'),
-    path('<gen_link>', views.redirect_view, name="redirect")
+    path('<gen_link>/', views.redirect_view, name="redirect")
 ]

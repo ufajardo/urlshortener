@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 
@@ -17,7 +17,7 @@ def main_index(request):
                 gen_link=genurl
             )
 
-            messages.success(request, "Your link is 127.0.0.1:8000/{}".format(genurl))
+            messages.success(request, "{}".format(genurl))
             shorten_form.save()
 
     context = {
@@ -33,10 +33,15 @@ def redirect_view(request, gen_link):
 
 
 def gen_url():
-    list_of_letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    gen_list = ""
 
-    for i in range(0, 6):
-        gen_list += (random.choice(list_of_letters))
+    url_list = url_shorten.objects.all()
 
-    return gen_list
+    list_of_letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789'
+    gen_link = ""
+
+    while gen_link == "" or gen_link == url_list:
+        for i in range(0, 6):
+            gen_link += (random.choice(list_of_letters))
+
+
+    return gen_link

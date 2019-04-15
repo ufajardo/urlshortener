@@ -1,20 +1,39 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>URLShorten</title>
+
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
 </head>
 <body>
-    <h1>This is a URL Shortener.</h1>
-    <form action="/" method="POST">
-        {% csrf_token %}
-        {{ form }}
-        <button type="submit">Submit</button>
-    </form>
-    {% if messages %}
-        {% for message in messages %}
-            {{ message }}
-        {% endfor %}
-    {% endif %}
+    <div id="main-content">
+        <div class="url_shortener">
+            <h2>Uly's URL Shortener</h2>
+            <form action="/" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            {% if messages %}
+                {% for message in messages %}
+            <div class="message">
+                <div class="message-title">
+                    <p>Your link is:</p>
+                </div>
+                <div class="message-body">
+                    <span class="urlLink">{{ request.get_full_path }}/{{ message }}</span>
+                </div>
+            </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>
