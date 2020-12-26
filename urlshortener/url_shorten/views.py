@@ -6,8 +6,8 @@ from .forms import ShortenForm
 from .models import url_shorten
 import random
 
+
 def main_index(request):
-    form = ShortenForm()
     if request.method == "POST":
         form = ShortenForm(request.POST)
         genurl = gen_url()
